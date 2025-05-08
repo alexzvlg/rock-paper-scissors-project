@@ -15,13 +15,6 @@ function getComputerChoice() {
 function getHumanChoice() {
     let gamePrompt = prompt("Choose one: rock, paper or scissors");
 
-    if (gamePrompt === "rock") {
-        gamePrompt;
-    } else if (gamePrompt === "paper") {
-        gamePrompt;
-    } else if (gamePrompt === "scissors") {
-        gamePrompt;
-    }
     return gamePrompt;
 };
 
@@ -77,11 +70,12 @@ function playGame() {
     function playRound(humanChoice, computerChoice) {
         humanChoice = getHumanChoice().toLowerCase();
         console.log("You: " + humanChoice);
+        
         computerChoice = getComputerChoice();
         console.log("Computer: " + computerChoice);
     
         if (humanChoice === computerChoice) {
-            console.log("That's a draw!");
+            console.log("That's a tie!");
         } else if (humanChoice === "rock" & computerChoice === "paper") {
             console.log("You lose! Paper beats Rock!");
             computerScore++;
@@ -131,7 +125,7 @@ function playGame() {
     } else if (humanScore < computerScore) {
         console.log("Too bad, you lost the game!");
     } else if (humanScore === computerScore) {
-        console.log("Incredible! This is a draw!");
+        console.log("Incredible! This is a tie!");
     }
     return;
 };
