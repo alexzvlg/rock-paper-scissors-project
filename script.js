@@ -18,55 +18,14 @@ function getHumanChoice() {
     return gamePrompt;
 };
 
-// Variables to keep track of the players score.
-// let humanScore = 0;
-// let computerScore = 0;
-
-// Function that takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement.
-/*
-function playRound(humanChoice, computerChoice) {
-    humanChoice = getHumanChoice().toLowerCase();
-    console.log("You: " + humanChoice);
-    computerChoice = getComputerChoice();
-    console.log("Computer: " + computerChoice);
-
-    let humanScore = 0;
-    let computerScore = 0
-
-    if (humanChoice === computerChoice) {
-        console.log("That's a draw!");
-    } else if (humanChoice === "rock" & computerChoice === "paper") {
-        console.log("You lose! Paper beats Rock!");
-        computerScore++;
-    } else if (humanChoice === "rock" & computerChoice === "scissors") {
-        console.log("You win! Rock beats Scissors!");
-        humanScore++;
-    } else if (humanChoice === "paper" & computerChoice === "rock") {
-        console.log("You win! Paper beats Rock!");
-        humanScore++;
-    } else if (humanChoice === "paper" & computerChoice === "scissors") {
-        console.log("You lose! Scissors beats Paper!");
-        computerScore++;
-    } else if (humanChoice === "scissors" & computerChoice === "rock") {
-        console.log("You lose! Rock beats Scissors!");
-        computerScore++;
-    } else if (humanChoice === "scissors" & computerChoice === "paper") {
-        console.log("You win! Scissors beats Paper!");
-        humanScore++;
-    } else;
-    console.log("Your score: " + humanScore);
-    console.log("Computer score: " + computerScore);
-    return;
-};
-*/
-
 // Function named playGame that calls playRound to play 5 rounds, keeps track of the scores and declares a winner at the end.
 function playGame() {  
-        
+    
+    // Variables to keep track of the players score.        
     let humanScore = 0;
     let computerScore = 0
 
-
+    // Function that takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement.
     function playRound(humanChoice, computerChoice) {
         humanChoice = getHumanChoice().toLowerCase();
         console.log("You: " + humanChoice);
@@ -100,6 +59,7 @@ function playGame() {
         return;
     };    
 
+    // Play 5 rounds.
     console.log("Round 1:");
     playRound();
     console.log("");
@@ -120,6 +80,7 @@ function playGame() {
     playRound();
     console.log("");
 
+    // Logic to tell a winner.
     if (humanScore > computerScore) {
         console.log("Congratulations, you won the game!");
     } else if (humanScore < computerScore) {
